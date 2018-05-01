@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Recorder : MonoBehaviour {
 	public List<NoteRecord> recording { get; set; }
+	public bool reverse { get; set; }
 	//--------------------------------------------------------------------------
 	/// <summary>
 	/// Start this instance.
@@ -39,6 +40,7 @@ public class Recorder : MonoBehaviour {
 	public void reverseRecording() {
 		// We don't want to accidentally affect our original.
 		Debug.Log("Recorder: Recording reversal.");
+		reverse = !reverse;
 		recording.Reverse(); // Flip order.
 		foreach (var note in recording) {
 			// Adjust the time signature: 5.0 - this note's time.

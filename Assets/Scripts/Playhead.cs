@@ -6,9 +6,11 @@ using UnityEngine;
 /// Playhead View Model: Location and transformation.
 /// </summary>
 public class Playhead : MonoBehaviour {
+	private readonly float _SPEED = 37.5f; // Required to calculate travel distance per second.
 	private Transform _playheadTransform;
 	private Vector3 _position;
 	private Vector3 _startingPosition;
+	public Vector3 _endPosition;
 	public float _currentX { get; set; } // x for our note placement.
 	private float _traversalIncrement; // How far to move 
 	//--------------------------------------------------------------------------
@@ -19,6 +21,7 @@ public class Playhead : MonoBehaviour {
 		_playheadTransform = gameObject.GetComponent<Transform> ();
 		_position = _playheadTransform.position;
 		_startingPosition = _position;
+		_endPosition = _startingPosition; // Same Z, Y. X modified via method.
 		_traversalIncrement = 1.0f; // Default, immediately updated.
 	}
 	//--------------------------------------------------------------------------
@@ -31,20 +34,35 @@ public class Playhead : MonoBehaviour {
 	}
 	//--------------------------------------------------------------------------
 	/// <summary>
-	/// Resets the position of the playhead.
+	/// Set the end position.
 	/// </summary>
-	public void resetPosition() {
-		Debug.Log ("Playhead: Resetting Position: " + _startingPosition);
-		_playheadTransform.position = _startingPosition; // Move the sprite.
-		_position = _startingPosition; // Reset last known position, too.
-		_currentX = _startingPosition.x;
+	public void setEndPositionX(float newX) {
+		_endPosition.x = newX;
 	}
 	//--------------------------------------------------------------------------
 	/// <summary>
-	/// Sets the position of the playhead.
+	/// Resets the position of the playhead.
 	/// </summary>
-	public void incrementPlayheadPosition() {
-		_position.x += _traversalIncrement;
+	public void resetPosition(bool reverse) {
+		if (!reverse) {
+			_playheadTransform.position = _startingPosition; // Move the sprite.
+			Debug.Log ("Playhead: Resetting to forward position: " + _startingPosition);
+		}
+		else {
+			_playheadTransform.position = _endPosition;
+			Debug.Log ("Playhead: Resetting to reverse position: " + _endPosition);
+		}
+		_position = _playheadTransform.position; // Reset last known position, too.
+		_currentX = _playheadTransform.position.x;
+	}
+	//--------------------------------------------------------------------------
+	/// <summary>
+	/// Increments or decrements the position of the playhead.
+	/// </summary>
+	public void adjustPlayheadPosition(bool reverse) {
+		if(!reverse) _position.x += _traversalIncrement;
+		else _position.x -= _traversalIncrement;
+
 		_currentX = _position.x; // Keep our current position up to date for note placement.
 		_playheadTransform.position = _position;
 	}

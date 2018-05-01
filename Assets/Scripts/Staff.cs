@@ -10,12 +10,14 @@ public class Staff : MonoBehaviour {
 	private StaffData _staffData; // Dynamic staff data. Dimensions for playhead.
 	private Playhead _playhead; // How we interact with our playhead.
 	private float _staffWidth; // Used to calculate our playhead increment.
+	private float _staffHeight;
 	private KeyNotes _keyNotes; // Key Note Sprite Resource Model
 	private Recorder _recorder; // Records note data, stores in model.
 
 	private readonly float _PLAYSECONDS = 5.0f; // In case we want to increase play time.
 	private readonly float _SPEED = 37.5f; // Required to calculate travel distance per second.
 	private readonly float _VERTICALOFFSET = 450.0f; // Better note alignment.
+	private readonly float _REVERSEHORIZONTALOFFSET = 60.0f; // Better note alignment.
 	//--------------------------------------------------------------------------
 	/// <summary>
 	/// Start this instance by getting dynamic data from our staff canvas
@@ -26,6 +28,7 @@ public class Staff : MonoBehaviour {
 
 		_staffData = GameObject.Find ("StaffCanvas").GetComponent<StaffData> ();
 		_staffWidth = _staffData.width;
+		_staffHeight = _staffData.height;
 
 		_timer = GameObject.Find ("Timer").GetComponent<Timer> ();
 		_playhead = GameObject.Find ("PlayheadSprite").GetComponent<Playhead> ();
@@ -36,13 +39,13 @@ public class Staff : MonoBehaviour {
 	/// Update this instance.
 	/// </summary>
 	void Update () {
-		_playhead.setTraversalIncrement (calculateIncrement());
+		float increment = calculateIncrement ();
+		_playhead.setTraversalIncrement (increment);
+		_playhead.setEndPositionX (_staffWidth - _REVERSEHORIZONTALOFFSET);
+
 		// Timer on?
 		if (_timer.timerEngaged) {
-			// In bounds?
-			if (_playhead._currentX <= _staffWidth) {
-				_playhead.incrementPlayheadPosition ();
-			}
+			_playhead.adjustPlayheadPosition (_recorder.reverse);
 		}
 	}
 	//--------------------------------------------------------------------------
@@ -59,7 +62,7 @@ public class Staff : MonoBehaviour {
 	/// Resets the playhead position.
 	/// </summary>
 	public void resetPlayhead() {
-		_playhead.resetPosition ();
+		_playhead.resetPosition (_recorder.reverse);
 	}
 	//--------------------------------------------------------------------------
 	/// <summary>

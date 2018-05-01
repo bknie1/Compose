@@ -33,21 +33,6 @@ public class Speaker : MonoBehaviour {
 		play(currentSound);
 	}
 	//--------------------------------------------------------------------------
-	public void modifyRecording(List<NoteRecord> recording) {
-		// We don't want to accidentally affect our original.
-		List<NoteRecord> modifiedRecording = recording;
-
-		if (reverse) {
-			modifiedRecording.Reverse(); // Flip order.
-			foreach (var note in modifiedRecording) {
-				// Adjust the time signature: 5.0 - this note's time.
-				note.time = 5.0f - note.time; 
-			}
-		}
-		// Play regardless.
-		playRecording (modifiedRecording);
-	}
-	//--------------------------------------------------------------------------
 	public void playRecording(List<NoteRecord> recording) {
 		// Generate delayed playback from modified list.
 		foreach (var note in recording) {
