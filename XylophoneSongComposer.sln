@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XylophoneSongComposer", "Assembly-CSharp.csproj", "{7C84BBB5-C379-DDA9-D8E5-C076B722813B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XylophoneSongComposer", "Assembly-CSharp-Editor.csproj", "{72CFEE9B-1F67-01A0-CDE5-769A4344DEB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C84BBB5-C379-DDA9-D8E5-C076B722813B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C84BBB5-C379-DDA9-D8E5-C076B722813B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C84BBB5-C379-DDA9-D8E5-C076B722813B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C84BBB5-C379-DDA9-D8E5-C076B722813B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72CFEE9B-1F67-01A0-CDE5-769A4344DEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72CFEE9B-1F67-01A0-CDE5-769A4344DEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72CFEE9B-1F67-01A0-CDE5-769A4344DEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72CFEE9B-1F67-01A0-CDE5-769A4344DEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\XyloStaff\XyloStaffModel.cs">
+    <Files>
+      <File FileName="Assets\Scripts\XyloKeys\XyloKeyboardController.cs" Line="37" Column="36" />
+      <File FileName="Assets\Scripts\XyloKeys\XyloKeyboardModel.cs" Line="30" Column="2" />
+      <File FileName="Assets\Scripts\XyloStaff\XyloStaffModel.cs" Line="21" Column="18" />
+      <File FileName="Assets\Scripts\XyloKeys\XyloKeyboardView.cs" Line="22" Column="29" />
+      <File FileName="Assets\Scripts\Timer\Timer.cs" Line="19" Column="4" />
+      <File FileName="Assets\Scripts\XyloStaff\XyloStaffController.cs" Line="11" Column="104" />
+      <File FileName="Assets\Scripts\XyloStaff\XyloStaffView.cs" Line="18" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
