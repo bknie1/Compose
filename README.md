@@ -1,6 +1,5 @@
 # Compose
-
-Hi Orien and friends. I wanted to quickly leave you with some of my thoughts on this project as it's important, in the interview process, for you to understand how I approach problems.
+This xylophone app allows you to play and record notes. Users can play back their creation in reverse or with an added reverb effect.
 
 # Challenges
 Orien and I have briefly discussed that I've typically worked in the 3D space; with virtual reality, no less. Most of my UI experience tends to be fairly simplistic so this was a great way to stretch my legs and see if I could translate any of my skills into some a little flatter. Spoiler: I think I did!
