@@ -44,12 +44,3 @@ I tried to be very mindful about who had their hands in what business. I think, 
 
 ### UI
 I was attempting to be particularly mindful about target platforms. This, being a 2D app, is obviously not my typical desktop 3D experience. So I employed some of my Android Studio knowledge and tried to make sure the UI elements were anchored appropriately. I didn't test whether or not it worked in both landscape and portrait but I wanted to mention that I did adjust the anchors, in a way, that I felt might help it scale better.
-
-# In Closing
-I'm a very deliberate programmer. I really like to puzzle about a problem for a long while before I even sit down to code. If I rush into things I tend to end up missing an opportunity to optimize or write clean code. So I wanted to thank you in advance for your patience.
-
-I hope you're interested enough in me to have a follow up conversation about how I can contribute to the e-learning space with you. I'm super excited about what you do and would love to participate; as a junior engineer, an internship if it's more appropriate, or beyond.
-
-Thank you!
-
-Brandon
