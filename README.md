@@ -1,9 +1,6 @@
 # Compose
 This xylophone app allows you to play and record notes. Users can play back their creation in reverse or with an added reverb effect.
 
-# Challenges
-Orien and I have briefly discussed that I've typically worked in the 3D space; with virtual reality, no less. Most of my UI experience tends to be fairly simplistic so this was a great way to stretch my legs and see if I could translate any of my skills into some a little flatter. Spoiler: I think I did!
-
 ### Recording Notes
 This, in my opinion, is the meat of the challenge. Registering user input and creating feedback for the user is what makes this experience fun. I quickly determined that, if I know what note I'm pressing, and where the playhead is in the physical space, I know where each note sprite needs to be rendered. I haven't used Sprites too often but it's worth mentioning that I had to wrestle with the camera for awhile to get the playhead and notes in view. Some mindful layering did the trick.
 
@@ -20,20 +17,18 @@ Third, this made the Reverse Filter easier to create.
 When the user toggles Reverse on, the user can either record right to left or playback right to left (backwards). The Reverse toggle immediately signals Recorder to flip our List and update the time signatures on each note (5 seconds - the original time signature) so that they play appropriately in reverse.
 
 ### Quantization
-I wasn't able to solve the extra credit in a meaningful amount of time. I want to get this back to you soon but I'll likely continue working on it tomorrow. But my idea is that, when a note is played, for each time signature, I can measure the difference between the signature and each setting to find the "nearest" appropriate value. I've used a similar approach in a recipe management program translating precise metric values into less precise Custom tablespoons, cups, etc.
-
-I'll send it along if I've made substantial progress. It's definitely a time thing, not a logic thing.
+I wasn't able to solve the extra credit in a meaningful amount of time. But my idea is that, when a note is played, for each time signature, I can measure the difference between the signature and each setting to find the "nearest" appropriate value. I've used a similar approach in a recipe management program translating precise metric values into less precise Custom tablespoons, cups, etc.
 
 # Design
 
 ### Diagrams
-I'm huge on drawing ideas out so please swing by the Diagrams folder to see what I white boarded. I translated it from my whiteboard to draw.io because, you know, that was way more practical.
+I'm huge on drawing ideas out so please swing by the Diagrams folder to see what I prototyped.
 
 ### Composition
 I find Unity development typically has more opportunities for composition than any other object oriented principle. This wasn't a large program but a basic example would be how Staff owns Playhead. The Playhead lives on the Staff, and its position is determined by Staff's size/orientation, so this made sense.
 
 ### Delegation and Encapsulation
-I tried to be very mindful about who had their hands in what business. I think, if I had a little more time, I could have done some things cleaner, but in general everything occurs in the same space; I'm not passing too much up/down the stack unnecessarily. An easy example would be that the Speaker script is solely responsible for all things audio while Recorder has its own List of recorded KeyNotes.
+I tried to be very mindful about who had their hands in what business. In general, everything occurs in the same space; I'm not passing too much up/down the stack unnecessarily. An easy example would be that the Speaker script is solely responsible for all things audio while Recorder has its own List of recorded KeyNotes.
 
 ### Classes
  - Xylophone Manager: As main() as its going to get. The jumping off point for user input.
